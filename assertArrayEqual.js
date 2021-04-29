@@ -11,9 +11,12 @@ const eqArrays = function(ar1, ar2) {
 
 };
 
-const assertArraysEqual = function(condition) {
+const assertArraysEqual = function(actual, expected) {
+  let firstAr = [];
+  let secAr = [];
+  actual = eqArrays(firstAr, secAr);
   
-  if (condition) {
+  if (actual === expected) {
     console.log ("✔✔✔ Arrays are officially equal!" );
   }
   else {
@@ -26,7 +29,7 @@ const assertArraysEqual = function(condition) {
 
 
 
-assertArraysEqual(eqArrays([1, 3, 3], [1, 3, 3]));
-assertArraysEqual(eqArrays([1, 4, 3], [1, 3, 3]));
-assertArraysEqual(eqArrays([2, 3, 3], [1, 3, 3]));
-assertArraysEqual(eqArrays([5, 3, 3], [5, 3, 3]));
+assertArraysEqual(eqArrays([1, 3, 3], [1, 3, 3]), true);
+assertArraysEqual(eqArrays([1, 4, 3], [1, 3, 3]), false);
+assertArraysEqual(eqArrays([2, 3, 3], [1, 3, 3]), false);
+assertArraysEqual(eqArrays([5, 3, 3], [5, 3, 3]), true);
