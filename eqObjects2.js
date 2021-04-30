@@ -34,6 +34,13 @@ const eqObjects = function(object1, object2) {
       }
     }
   }
+  if (!(Array.isArray(object1[ob1])) && !(Array.isArray(object2[ob1]))) {
+    if (!(object1[ob1] === object2[ob1])) {
+      return false;
+    }
+   
+  }
+
 }
   //console.log(true);
   return true;
