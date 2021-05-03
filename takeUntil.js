@@ -11,6 +11,9 @@ const takeUntil = function(array, callback) {
     if (!callback(values)) {
       output.push(values);
     }
+    if (callback(values)) {
+      break;
+    }
     
   }
 return output;
@@ -29,3 +32,7 @@ console.log(results2);
 
 
 //////////////////ask question
+
+//[ 1, 2, 5, 7, 2 ]
+//---
+//[ 'I\'ve', 'been', 'to', 'Hollywood' ]
