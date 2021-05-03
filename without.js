@@ -11,9 +11,12 @@ const eqArrays = function(ar1, ar2) {
 
 };
 
-const assertArraysEqual = function(condition) {
+const assertArraysEqual = function(actual, expected) {
+  let firstAr = [];
+  let secAr = [];
+  actual = eqArrays(firstAr, secAr);
   
-  if (condition) {
+  if (actual === expected) {
     console.log ("✔✔✔ Arrays are officially equal!" );
   }
   else {
@@ -40,6 +43,9 @@ const without = function(arr, remove) {
 
 
 const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
+//without(words, ); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+assertArraysEqual(eqArrays(without(words, ["lighthouse"]), ["hello", "world"]), true);
+
+module.exports = without;
+
